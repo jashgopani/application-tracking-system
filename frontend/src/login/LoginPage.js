@@ -47,7 +47,7 @@ export default class LoginPage extends Component {
   };
 
   handleSignupGoogle = () => {
-    window.open("http://127.0.0.1:5000/users/signupGoogle"); // Google oauth url
+    window.open("http://localhost:5000/users/signupGoogle"); // Google oauth url
   };
 
   componentDidMount() {
@@ -64,7 +64,7 @@ export default class LoginPage extends Component {
       if (token) {
         storeToken(obj);
         window.location.assign(
-          "http://localhost:3000/application-tracking-system"
+          "http://127.0.0.1:3000/application-tracking-system"
         ); // changing back to this to avoid leaking data such as access tokens from the url
       }
     }
