@@ -72,11 +72,35 @@ const App = () => {
 		setCurrentPage(currentPage);
 	};
 
+	const sidebarOptions = [
+		{ label: 'Search', iconClass: 'fas fa-search', onClick: () => switchPage('SearchPage') },
+		{
+			label: 'Manage',
+			iconClass: 'fas fa-folder',
+			onClick: () => switchPage('ManageResumePage')
+		},
+		{
+			label: 'Matches',
+			iconClass: 'fas fa-check-double',
+			onClick: () => switchPage('MatchesPage')
+		},
+		{
+			label: 'Applications',
+			iconClass: 'fas fa-file-alt',
+			onClick: () => switchPage('ApplicationPage')
+		},
+		{
+			label: 'Profile',
+			iconClass: 'fas fa-user-alt',
+			onClick: () => switchPage('ProfilePage')
+		},
+		{ label: 'Logout', iconClass: 'fas fa-sign-out-alt', onClick: () => handleLogout() }
+	];
 	const renderApp = () => {
 		if (sidebar) {
 			return (
 				<div className='main-page'>
-					<Sidebar switchPage={switchPage} handleLogout={handleLogout} />
+					<Sidebar options={sidebarOptions} />
 					<div className='main'>
 						<div className='content'>
 							<div className=''>
