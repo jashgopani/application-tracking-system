@@ -22,8 +22,7 @@ Our application keeps track of the jobs you've added to your wish list. It also 
 
 - [Basic Design](#basic-design)
 - [Demo](#demo)
-- [Improvements](#improvements)
-  - [Whats New](#whats-new)
+- [New Features In Phase 3](#new-features-in-phase-3)
 - [Roadmap](#roadmap)
 - [Future Scope](#future-scope)
 - [Explanation](#explanation)
@@ -87,15 +86,17 @@ On this page, user can see different jobs that would be recommended to them base
 
 <p align="center"><img width="700" src="./resources/Recommendjobspage.png"></p>
 
-### Whats New
+## New Features in Phase 3
 
-#### Version 1.1
-
-- Added Google Authorization for login and signup
-- Added User Profile page to the application
-- Added Matches page to recommend jobs to the user
-- Added Apply button and Job details on the Search page
-- Modfied and revamped the UI
+#### Dockerized the Application
+We containerized are application such that the frontend and backend are separate but can communicate with each other. Along with this, dockerizing the application fixed a main issue where creating users and signing will sometimes not work. 
+#### Fixed Multiple Bugs
+We fixed multiple bugs including:
+- Undefined profile image when there is none.
+- Authentication into the application randomly not working.
+- Unable to load matched jobs
+#### Updated Location List
+Currently, we updated the locations to coincide with current times.
 
 ## Future Scope:
 
@@ -202,7 +203,7 @@ Please see our CONTRIBUTING.md for instructions on how to contribute to the repo
 
 ## Team Members
 
-- Sakshi Mahadik
-- Jaiwin Shah
-- Om Jain
-- Jay Shah
+- Akhilesh Neeruganti
+- Jash Gopani
+- Hemil Mehta
+- Rohan Ajmera
