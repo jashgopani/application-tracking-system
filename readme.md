@@ -131,36 +131,31 @@ Currently, we have four fundamental steps in our project:
 - [Python](https://www.python.org/downloads/) (recommended >= 3.8)
 - [pip](https://pip.pypa.io/en/stable/installation/) (Latest version 21.3 used as of 11/3)
 - [npm](https://nodejs.org/en/) (Latest version 6.14.4 used as of 11/3)
+- [Docker-Desktop](https://www.docker.com/products/docker-desktop/) (Latest version as of 11/27)
 
-### Strongly Recommended:
+### Steps to follow for the installation
+1. **Clone the Repository**
+    - Use the command `git clone https://github.com/jashgopani/application-tracking-system.git` to clone the repository.
 
-- A terminal environment capable of handling bash scripts.
+2. **Start the Docker Engine**
+    - Ensure that Docker is installed on your system. If not, you can download it from the official Docker website.
+    - Start the Docker engine on your machine. The command varies based on your operating system.
 
-To install all required packages, while within the context of project root directory, run:
+3. **Build Images**
+    - Navigate to the backend folder and build the image for the API using the following command:
+        ```
+        docker build -f dockerfile.api -t ats-api .
+        ```
+    - Similarly, navigate to the frontend folder and build the image for the client using the following command:
+        ```
+        docker build -f dockerfile.client -t ats-client .
+        ```
 
-./setup.sh
-
-This will handle all npm and pip package installations required for both the front and backend.
-
-If the script says "command not found" or something similar, run chmod +x ./setup.sh. This grants the script execution privileges. Depending on your setup, this may occur for the boot_dockerless files, amongst others. The same command will fix the issue.
-
-## Getting Started:
-
-### Boot:
-
-To run a testing environment, run:
-
-./startup.sh
-
-This will run flask and npm simultaneously, booting both the front and backend. Note - npm takes substantially longer to boot compared to flask.
-
-### Shutdown:
-
-To ensure that flask is no longer occupying a port, run:
-
-./shutdown.sh
-
-This will search for any active process containing "flask" and kill the process.
+4. **Run Docker Compose**
+    - Finally, run the following command to start the application:
+        ```
+        docker-compose up
+        ```
 
 ## Hosting the Database:
 
@@ -182,17 +177,17 @@ mongodb
 - **If current MongoDB Atlas owner adds your username/password to the cluster, skip to step 4** \*
 
 2. Follow MongoDB Atlas [Setup Guide](https://docs.atlas.mongodb.com/getting-started/) to create a database collection for hosting applications
-3. Follow the instructions at [OAuth Client ID Guide](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid) in order to get the client id and password.
-4. Create application.yml in the backend folder with the following content:
+3. Create application.yml in the backend folder with the following content:
    ```
    GOOGLE_CLIENT_ID : <Oauth Google ID>
    GOOGLE_CLIENT_SECRET : <Oauth Google Secret>
    CONF_URL : https://accounts.google.com/.well-known/openid-configuration
    SECRET_KEY : <Any Secret You Want>
-   username : <MongoDB Atlas Username>
-   password : <MongoDB Atlas Password>
+   USERNAME : <MongoDB Atlas Username>
+   PASSWORD : <MongoDB Atlas Password>
+   CLUSTER_URL : <MongoDB Cluster URL>
    ```
-5. In app.py set 'host' string to your MongoDB Atlas connection string. Replace the username and password with {username} and {password} respectively
+4. In app.py set 'host' string to your MongoDB Atlas connection string. Replace the username and password with {username} and {password} respectively
 6. For testing through CI to function as expected, repository secrets will need to be added through the settings. Create individual secrets with the following keys/values:
 
 MONGO_USER: <MongoDB Atlas cluster username>
