@@ -1,14 +1,13 @@
 https://user-images.githubusercontent.com/89501363/144725439-5d9191f8-df13-4814-aa15-99cd752ab0cc.mp4
 
-[![GitHub license](https://img.shields.io/github/license/kingan1/application-tracking-system)](https://github.com/kingan1/application-tracking-system/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/jashgopani/application-tracking-system)](https://github.com/jashgopani/application-tracking-system/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/426259091.svg)](https://zenodo.org/badge/latestdoi/426259091)
-[![codecov](https://codecov.io/gh/kingan1/application-tracking-system/branch/main/graph/badge.svg)](https://codecov.io/gh/kingan1/application-tracking-system)
-![GitHub issues](https://img.shields.io/github/issues/kingan1/application-tracking-system)
-![GitHub issues](https://img.shields.io/github/issues-closed/kingan1/application-tracking-system)
-![GitHub top language](https://img.shields.io/github/languages/top/kingan1/application-tracking-system)
+[![codecov](https://codecov.io/gh/jashgopani/application-tracking-system/branch/main/graph/badge.svg)](https://codecov.io/gh/kingan1/application-tracking-system)
+![GitHub issues](https://img.shields.io/github/issues/jashgopani/application-tracking-system)
+![GitHub issues](https://img.shields.io/github/issues-closed/jashgopani/application-tracking-system)
+![GitHub top language](https://img.shields.io/github/languages/top/jashgopani/application-tracking-system)
 
-[![Build and Deploy Frontend](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
-[![Super Linter](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml)
+[![Build and Deploy Frontend](https://github.com/jashgopani/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/jashgopani/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
 
 # J-Tracker - Your Job Tracking Assistant
 
