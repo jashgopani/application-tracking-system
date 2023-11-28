@@ -1,4 +1,4 @@
-https://user-images.githubusercontent.com/89501363/144725439-5d9191f8-df13-4814-aa15-99cd752ab0cc.mp4
+# J-Tracker - Your Job Tracking Assistant
 
 [![GitHub license](https://img.shields.io/github/license/jashgopani/application-tracking-system)](https://github.com/jashgopani/application-tracking-system/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/426259091.svg)](https://zenodo.org/badge/latestdoi/426259091)
@@ -7,15 +7,40 @@ https://user-images.githubusercontent.com/89501363/144725439-5d9191f8-df13-4814-
 [![Github closes issues](https://img.shields.io/github/issues-closed-raw/jashgopani/application-tracking-system)](https://github.com/jashgopani/application-tracking-system/issues?q=is%3Aissue+is%3Aclosed)
 ![GitHub top language](https://img.shields.io/github/languages/top/jashgopani/application-tracking-system)
 
-[![Build and Deploy Frontend](https://github.com/jashgopani/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/jashgopani/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
-
-# J-Tracker - Your Job Tracking Assistant
-
 <p align="center"><img width="700" src="./resources/ApplicationTrackingAnimation.gif"></p>
 
 The process of applying for jobs and internships is not a cakewalk. Managing job applications is a time-consuming process. Due to the referrals and deadlines, the entire procedure can be stressful. Our application allows you to track and manage your job application process, as well as regulate it, without the use of cumbersome Excel spreadsheets.
 
 Our application keeps track of the jobs you've added to your wish list. It also keeps track of the companies you've already applied to and keeps a list of any rejections. Rather than having the user browse each company's site for potential prospects, our application allows the applicant to search for them directly using basic keywords. Any prospective work offers can then be added to the applicant's wishlist.
+
+## New Features in Phase 3
+🎥[Phase-3 Demo Video](https://youtu.be/VKTob1N19ug)
+
+## ⭐ Highlight of Phase 3 ⭐
+### Dockerization 🗃️
+Containerizing the application with docker has helped us achieve 2 prominent things
+1. Significantly increasing the speed in which one would be able to setup the project on their machines.
+2. Automation of the entire run of the application including running the tests!
+
+### Other new features
+1. Upload Resume versions
+2. Bookmark option for the job recommendations
+3. Enhanced Search to fetch latest job opportunities
+4. Updated country list that now supports 120+ countries
+5. Updated skills list so that you can present your profile without missing on any skill
+6. Refactorization of Class components into functional components which makes the code more maintainable
+
+#### Bug fixes
+1. Undefined profile image.
+2. Authentication into the application randomly not working.
+3. Unable to load matched jobs
+4. Application screen throwing null pointer randomly
+
+---
+
+### Application Demo video
+
+https://user-images.githubusercontent.com/89501363/144725439-5d9191f8-df13-4814-aa15-99cd752ab0cc.mp4
 
 ## Table of contents
 
@@ -80,23 +105,6 @@ The user is able to access different saved applications - Waitlisted application
 On this page, user can see different jobs that would be recommended to them based on their profile and their preferences. User can apply for that position from this page too.
 
 <p align="center"><img width="700" src="./resources/Recommendjobspage.png"></p>
-
-## New Features in Phase 3
-📹![Phase-3 Demo Video](https://youtu.be/EFmUjue8DAg)
-
-#### Dockerized the Application
-Containerizing the application with docker has helped us in achieving 2 prominent things
-1. Significantly increasing the speed in which one would be able to setup the project on their machines.
-2. Automation of the entire run of the application including running the tests!
-#### Fixed Multiple Bugs
-We fixed multiple bugs including:
-- Undefined profile image when there is none.
-- Authentication into the application randomly not working.
-- Unable to load matched jobs
-#### Updated Location List
-Currently, we updated the locations to coincide with current times.
-#### Added a wishlist button to save the applications
-Previously, there was no way in which we could save the applications for future reference. This feature would help us in saving the applications for future references. Also, this feature could act as a framework to mark some applications as our favorite.
 
 ## Future Scope:
 
