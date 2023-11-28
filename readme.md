@@ -27,7 +27,7 @@ Our application keeps track of the jobs you've added to your wish list. It also 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
   - [Requirements](#requirements)
-  - [Steps to follow](#steps-to-follow)
+  - [Steps to follow for the installation](#steps-to-follow-for-the-installation)
 - [Hosting the Database](#hosting-the-database)
   - [Local MongoDB](#local-mongodb)
   - [Hosted database with MongoDB Atlas](#hosted-database-with-mongodb-atlas)
@@ -82,6 +82,7 @@ On this page, user can see different jobs that would be recommended to them base
 <p align="center"><img width="700" src="./resources/Recommendjobspage.png"></p>
 
 ## New Features in Phase 3
+📹![Phase-3 Demo Video](https://youtu.be/EFmUjue8DAg)
 
 #### Dockerized the Application
 Containerizing the application with docker has helped us in achieving 2 prominent things
