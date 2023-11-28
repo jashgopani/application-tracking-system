@@ -27,10 +27,7 @@ Our application keeps track of the jobs you've added to your wish list. It also 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
   - [Requirements](#requirements)
-  - [Strongly Recommended](#strongly-recommended)
-- [Getting Started](#getting-started)
-  - [Boot](#boot)
-  - [Shutdown](#shutdown)
+  - [Steps to follow](#steps-to-follow)
 - [Hosting the Database](#hosting-the-database)
   - [Local MongoDB](#local-mongodb)
   - [Hosted database with MongoDB Atlas](#hosted-database-with-mongodb-atlas)
@@ -87,7 +84,9 @@ On this page, user can see different jobs that would be recommended to them base
 ## New Features in Phase 3
 
 #### Dockerized the Application
-We containerized are application such that the frontend and backend are separate but can communicate with each other. Along with this, dockerizing the application fixed a main issue where creating users and signing will sometimes not work. 
+Containerizing the application with docker has helped us in achieving 2 prominent things
+1. Significantly increasing the speed in which one would be able to setup the project on their machines.
+2. Automation of the entire run of the application including running the tests!
 #### Fixed Multiple Bugs
 We fixed multiple bugs including:
 - Undefined profile image when there is none.
@@ -95,6 +94,8 @@ We fixed multiple bugs including:
 - Unable to load matched jobs
 #### Updated Location List
 Currently, we updated the locations to coincide with current times.
+#### Added a wishlist button to save the applications
+Previously, there was no way in which we could save the applications for future reference. This feature would help us in saving the applications for future references. Also, this feature could act as a framework to mark some applications as our favorite.
 
 ## Future Scope:
 
@@ -133,7 +134,8 @@ Currently, we have four fundamental steps in our project:
 - [npm](https://nodejs.org/en/) (Latest version 6.14.4 used as of 11/3)
 - [Docker-Desktop](https://www.docker.com/products/docker-desktop/) (Latest version as of 11/27)
 
-### Steps to follow for the installation
+### Steps to follow for the installation:
+
 1. **Clone the Repository**
     - Use the command `git clone https://github.com/jashgopani/application-tracking-system.git` to clone the repository.
 
