@@ -21,9 +21,8 @@ Our application keeps track of the jobs you've added to your wish list. It also 
 ## Table of contents
 
 - [Basic Design](#basic-design)
-- [Demo](#demo)
+- [Samples](#samples)
 - [New Features In Phase 3](#new-features-in-phase-3)
-- [Roadmap](#roadmap)
 - [Future Scope](#future-scope)
 - [Explanation](#explanation)
 - [Technologies Used](#technologies-used)
@@ -106,6 +105,7 @@ Currently, we updated the locations to coincide with current times.
 - Include a link to the university’s career fair page.
 - Direct connection to Linkedin, allowing for the addition of job opportunities to the wishlist.
 - An option to maintain separate profiles for job tracking.
+- Integrate the database into docker
 
 ## Explanation:
 
@@ -123,6 +123,7 @@ Currently, we have four fundamental steps in our project:
 - Flask
 - MongoDB
 - React
+- Docker
 
 ## Installation:
 
@@ -182,13 +183,17 @@ mongodb
 - **If current MongoDB Atlas owner adds your username/password to the cluster, skip to step 4** \*
 
 2. Follow MongoDB Atlas [Setup Guide](https://docs.atlas.mongodb.com/getting-started/) to create a database collection for hosting applications
-3. In app.py set 'host' string to your MongoDB Atlas connection string
-4. Create an application.yml file in the /backend directory with the specifications:
-
-username: <MongoDB Atlas cluster username>
-password: <MongoDB Atlas cluster password>
-
-5. For testing through CI to function as expected, repository secrets will need to be added through the settings. Create individual secrets with the following keys/values:
+3. Create application.yml in the backend folder with the following content:
+   ```
+   GOOGLE_CLIENT_ID : <Oauth Google ID>
+   GOOGLE_CLIENT_SECRET : <Oauth Google Secret>
+   CONF_URL : https://accounts.google.com/.well-known/openid-configuration
+   SECRET_KEY : <Any Secret You Want>
+   username : <MongoDB Atlas Username>
+   password : <MongoDB Atlas Password>
+   ```
+4. In app.py set 'host' string to your MongoDB Atlas connection string. Replace the username and password with {username} and {password} respectively
+6. For testing through CI to function as expected, repository secrets will need to be added through the settings. Create individual secrets with the following keys/values:
 
 MONGO_USER: <MongoDB Atlas cluster username>
 MONGO_PASS: <MongoDB Atlas cluster password>
