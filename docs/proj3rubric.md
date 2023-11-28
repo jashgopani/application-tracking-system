@@ -3,7 +3,7 @@
 |Video|3|2min video of new functionality, showing a significant delta from prior.|
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|3|evidence in GH|
 |Number of commits|3|in GH|
-|Number of commits: by different people|3|in GH|
+|Number of commits: by different people|2|in GH|
 |Issues reports: there are **many**|3|
 |Issues are being closed|3|evidence in GH|
 |DOI badge: exists|3|in GH|
