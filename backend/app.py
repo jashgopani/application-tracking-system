@@ -299,25 +299,7 @@ def create_app():
 
             for key in data.keys():
                 user[key] = data[key]
-
-            # if data["skills"]:
-            #     user.skills = data["skills"]
-
-            # if data["job_levels"]:
-            #     user.job_levels = data["job_levels"]
-
-            # if data["locations"]:
-            #     user.locations = data["locations"]
-
-            # if data["institution"]:
-            #     user.institution = data["institution"]
-
-            # if data["phone_number"]:
-            #     user.phone_number = data["phone_number"]
-
-            # if data["address"]:
-            #     user.address = data["address"]
-
+                
             user.save()
             return jsonify(user.to_json()), 200
 
