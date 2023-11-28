@@ -211,3 +211,6 @@ Please see our CONTRIBUTING.md for instructions on how to contribute to the repo
 - Jash Gopani
 - Hemil Mehta
 - Rohan Ajmera
+
+## Contact Info
+For any questions, please email neerua08@gmail.com.
