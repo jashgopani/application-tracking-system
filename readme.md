@@ -1,18 +1,17 @@
 https://user-images.githubusercontent.com/89501363/144725439-5d9191f8-df13-4814-aa15-99cd752ab0cc.mp4
 
-[![GitHub license](https://img.shields.io/github/license/kingan1/application-tracking-system)](https://github.com/kingan1/application-tracking-system/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/jashgopani/application-tracking-system)](https://github.com/jashgopani/application-tracking-system/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/426259091.svg)](https://zenodo.org/badge/latestdoi/426259091)
-[![codecov](https://codecov.io/gh/kingan1/application-tracking-system/branch/main/graph/badge.svg)](https://codecov.io/gh/kingan1/application-tracking-system)
-![GitHub issues](https://img.shields.io/github/issues/kingan1/application-tracking-system)
-![GitHub issues](https://img.shields.io/github/issues-closed/kingan1/application-tracking-system)
-![GitHub top language](https://img.shields.io/github/languages/top/kingan1/application-tracking-system)
+[![codecov](https://codecov.io/gh/jashgopani/application-tracking-system/branch/main/graph/badge.svg)](https://codecov.io/gh/kingan1/application-tracking-system)
+[![GitHub issues](https://img.shields.io/github/issues/jashgopani/application-tracking-system)](https://github.com/jashgopani/application-tracking-system/issues)
+[![Github closes issues](https://img.shields.io/github/issues-closed-raw/jashgopani/application-tracking-system)](https://github.com/jashgopani/application-tracking-system/issues?q=is%3Aissue+is%3Aclosed)
+![GitHub top language](https://img.shields.io/github/languages/top/jashgopani/application-tracking-system)
 
-[![Build and Deploy Frontend](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
-[![Super Linter](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml)
+[![Build and Deploy Frontend](https://github.com/jashgopani/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/jashgopani/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
 
 # J-Tracker - Your Job Tracking Assistant
 
-https://user-images.githubusercontent.com/43064854/135554150-c06afd4e-d223-47e3-b123-b45f9cd1b87a.mp4
+<p align="center"><img width="700" src="./resources/ApplicationTrackingAnimation.gif"></p>
 
 The process of applying for jobs and internships is not a cakewalk. Managing job applications is a time-consuming process. Due to the referrals and deadlines, the entire procedure can be stressful. Our application allows you to track and manage your job application process, as well as regulate it, without the use of cumbersome Excel spreadsheets.
 
@@ -21,19 +20,14 @@ Our application keeps track of the jobs you've added to your wish list. It also 
 ## Table of contents
 
 - [Basic Design](#basic-design)
-- [Demo](#demo)
-- [Improvements](#improvements)
-  - [Whats New](#whats-new)
-- [Roadmap](#roadmap)
+- [Samples](#samples)
+- [New Features In Phase 3](#new-features-in-phase-3)
 - [Future Scope](#future-scope)
 - [Explanation](#explanation)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
   - [Requirements](#requirements)
-  - [Strongly Recommended](#strongly-recommended)
-- [Getting Started](#getting-started)
-  - [Boot](#boot)
-  - [Shutdown](#shutdown)
+  - [Steps to follow for the installation](#steps-to-follow-for-the-installation)
 - [Hosting the Database](#hosting-the-database)
   - [Local MongoDB](#local-mongodb)
   - [Hosted database with MongoDB Atlas](#hosted-database-with-mongodb-atlas)
@@ -87,15 +81,22 @@ On this page, user can see different jobs that would be recommended to them base
 
 <p align="center"><img width="700" src="./resources/Recommendjobspage.png"></p>
 
-### Whats New
+## New Features in Phase 3
+📹![Phase-3 Demo Video](https://youtu.be/EFmUjue8DAg)
 
-#### Version 1.1
-
-- Added Google Authorization for login and signup
-- Added User Profile page to the application
-- Added Matches page to recommend jobs to the user
-- Added Apply button and Job details on the Search page
-- Modfied and revamped the UI
+#### Dockerized the Application
+Containerizing the application with docker has helped us in achieving 2 prominent things
+1. Significantly increasing the speed in which one would be able to setup the project on their machines.
+2. Automation of the entire run of the application including running the tests!
+#### Fixed Multiple Bugs
+We fixed multiple bugs including:
+- Undefined profile image when there is none.
+- Authentication into the application randomly not working.
+- Unable to load matched jobs
+#### Updated Location List
+Currently, we updated the locations to coincide with current times.
+#### Added a wishlist button to save the applications
+Previously, there was no way in which we could save the applications for future reference. This feature would help us in saving the applications for future references. Also, this feature could act as a framework to mark some applications as our favorite.
 
 ## Future Scope:
 
@@ -105,6 +106,7 @@ On this page, user can see different jobs that would be recommended to them base
 - Include a link to the university’s career fair page.
 - Direct connection to Linkedin, allowing for the addition of job opportunities to the wishlist.
 - An option to maintain separate profiles for job tracking.
+- Integrate the database into docker
 
 ## Explanation:
 
@@ -122,6 +124,7 @@ Currently, we have four fundamental steps in our project:
 - Flask
 - MongoDB
 - React
+- Docker
 
 ## Installation:
 
@@ -130,36 +133,32 @@ Currently, we have four fundamental steps in our project:
 - [Python](https://www.python.org/downloads/) (recommended >= 3.8)
 - [pip](https://pip.pypa.io/en/stable/installation/) (Latest version 21.3 used as of 11/3)
 - [npm](https://nodejs.org/en/) (Latest version 6.14.4 used as of 11/3)
+- [Docker-Desktop](https://www.docker.com/products/docker-desktop/) (Latest version as of 11/27)
 
-### Strongly Recommended:
+### Steps to follow for the installation:
 
-- A terminal environment capable of handling bash scripts.
+1. **Clone the Repository**
+    - Use the command `git clone https://github.com/jashgopani/application-tracking-system.git` to clone the repository.
 
-To install all required packages, while within the context of project root directory, run:
+2. **Start the Docker Engine**
+    - Ensure that Docker is installed on your system. If not, you can download it from the official Docker website.
+    - Start the Docker engine on your machine. The command varies based on your operating system.
 
-./setup.sh
+3. **Build Images**
+    - Navigate to the backend folder and build the image for the API using the following command:
+        ```
+        docker build -f dockerfile.api -t ats-api .
+        ```
+    - Similarly, navigate to the frontend folder and build the image for the client using the following command:
+        ```
+        docker build -f dockerfile.client -t ats-client .
+        ```
 
-This will handle all npm and pip package installations required for both the front and backend.
-
-If the script says "command not found" or something similar, run chmod +x ./setup.sh. This grants the script execution privileges. Depending on your setup, this may occur for the boot_dockerless files, amongst others. The same command will fix the issue.
-
-## Getting Started:
-
-### Boot:
-
-To run a testing environment, run:
-
-./startup.sh
-
-This will run flask and npm simultaneously, booting both the front and backend. Note - npm takes substantially longer to boot compared to flask.
-
-### Shutdown:
-
-To ensure that flask is no longer occupying a port, run:
-
-./shutdown.sh
-
-This will search for any active process containing "flask" and kill the process.
+4. **Run Docker Compose**
+    - Finally, run the following command to start the application:
+        ```
+        docker-compose up
+        ```
 
 ## Hosting the Database:
 
@@ -181,13 +180,18 @@ mongodb
 - **If current MongoDB Atlas owner adds your username/password to the cluster, skip to step 4** \*
 
 2. Follow MongoDB Atlas [Setup Guide](https://docs.atlas.mongodb.com/getting-started/) to create a database collection for hosting applications
-3. In app.py set 'host' string to your MongoDB Atlas connection string
-4. Create an application.yml file in the /backend directory with the specifications:
-
-username: <MongoDB Atlas cluster username>
-password: <MongoDB Atlas cluster password>
-
-5. For testing through CI to function as expected, repository secrets will need to be added through the settings. Create individual secrets with the following keys/values:
+3. Create application.yml in the backend folder with the following content:
+   ```
+   GOOGLE_CLIENT_ID : <Oauth Google ID>
+   GOOGLE_CLIENT_SECRET : <Oauth Google Secret>
+   CONF_URL : https://accounts.google.com/.well-known/openid-configuration
+   SECRET_KEY : <Any Secret You Want>
+   USERNAME : <MongoDB Atlas Username>
+   PASSWORD : <MongoDB Atlas Password>
+   CLUSTER_URL : <MongoDB Cluster URL>
+   ```
+4. In app.py set 'host' string to your MongoDB Atlas connection string. Replace the username and password with {username} and {password} respectively
+6. For testing through CI to function as expected, repository secrets will need to be added through the settings. Create individual secrets with the following keys/values:
 
 MONGO_USER: <MongoDB Atlas cluster username>
 MONGO_PASS: <MongoDB Atlas cluster password>
@@ -202,7 +206,10 @@ Please see our CONTRIBUTING.md for instructions on how to contribute to the repo
 
 ## Team Members
 
-- Sakshi Mahadik
-- Jaiwin Shah
-- Om Jain
-- Jay Shah
+- Akhilesh Neeruganti
+- Jash Gopani
+- Hemil Mehta
+- Rohan Ajmera
+
+## Contact Info
+For any questions, please email neerua08@gmail.com.

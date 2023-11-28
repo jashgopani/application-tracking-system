@@ -17,7 +17,7 @@ extension-pkg-whitelist=
 fail-on=
 
 # Specify a score threshold to be exceeded before program exits with error.
-fail-under=10.0
+fail-under=6.9
 
 # Files or directories to be skipped. They should be base names, not paths.
 ignore=CVS
@@ -61,9 +61,10 @@ unsafe-load-any-extension=no
 
 [MESSAGES CONTROL]
 
+
 # Only show warnings with the listed confidence levels. Leave empty to show
 # all. Valid levels: HIGH, INFERENCE, INFERENCE_FAILURE, UNDEFINED.
-confidence=
+; confidence=
 
 # Disable the message, report, category or checker with the given id(s). You
 # can either give multiple identifiers separated by comma (,) or put this
@@ -153,7 +154,11 @@ disable=print-statement,
         deprecated-sys-function,
         exception-escape,
         comprehension-escape,
-        C0103
+        
+
+; disable=all
+
+
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

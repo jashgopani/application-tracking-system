@@ -2,29 +2,30 @@
 The flask application for our program
 """
 # importing required python libraries
+import json
+from datetime import datetime, timedelta
+import hashlib
+import uuid
+import random
 from flask import Flask, jsonify, request, send_file, redirect, url_for, session
 from flask_mongoengine import MongoEngine
 from flask_cors import CORS, cross_origin
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+
 from bs4 import BeautifulSoup
-from itertools import islice
-from webdriver_manager.chrome import ChromeDriverManager
-from bson.json_util import dumps
-from io import BytesIO
+
 from fake_useragent import UserAgent
 import pandas as pd
-import json
-from datetime import datetime, timedelta
+
+
 import yaml
-import hashlib
-import uuid
-import certifi
+
+
+
 import requests
-import random
+
 from authlib.integrations.flask_client import OAuth
 from authlib.common.security import generate_token
-import os
+
 
 existing_endpoints = ["/applications", "/resume"]
 
@@ -54,7 +55,7 @@ def create_app():
     oauth = OAuth(app)
 
     @app.errorhandler(404)
-    def page_not_found(e):
+    def page_not_found():
         """
         Returns a json object to indicate error 404
 
@@ -64,7 +65,7 @@ def create_app():
 
     @app.errorhandler(405)
     # pylint: disable=C0103
-    def page_not_allowed(e):
+    def page_not_allowed():
         """
         Returns a json object to indicate error 405
 
@@ -178,6 +179,7 @@ def create_app():
 
     @app.route('/users/signupGoogle/authorized')
     def authorized():
+        print("Entered google auth!")
         token = oauth.google.authorize_access_token()
         user = oauth.google.parse_id_token(token, nonce=session['nonce'])
         session['user'] = user
@@ -214,7 +216,7 @@ def create_app():
             [{"token": token_whole, "expiry": expiry_str}]
         userSaved.update(authTokens=auth_tokens_new)
 
-        return redirect(f"http://localhost:3000/?token={token_whole}&expiry={expiry_str}&userId={unique_id}")
+        return redirect(f"http://127.0.0.1:3000/?token={token_whole}&expiry={expiry_str}&userId={unique_id}")
 
     @app.route("/users/signup", methods=["POST"])
     def sign_up():
@@ -298,25 +300,6 @@ def create_app():
 
             for key in data.keys():
                 user[key] = data[key]
-
-            # if data["skills"]:
-            #     user.skills = data["skills"]
-
-            # if data["job_levels"]:
-            #     user.job_levels = data["job_levels"]
-
-            # if data["locations"]:
-            #     user.locations = data["locations"]
-
-            # if data["institution"]:
-            #     user.institution = data["institution"]
-
-            # if data["phone_number"]:
-            #     user.phone_number = data["phone_number"]
-
-            # if data["address"]:
-            #     user.address = data["address"]
-
             user.save()
             return jsonify(user.to_json()), 200
 
@@ -707,12 +690,13 @@ app = create_app()
 
 with open("application.yml") as f:
     info = yaml.load(f, Loader=yaml.FullLoader)
-    username = info["username"]
-    password = info["password"]
+    username = info["USERNAME"]
+    password = info["PASSWORD"]
+    cluster_url = info["CLUSTER_URL"]
     # ca=certifi.where()
     app.config["MONGODB_SETTINGS"] = {
         "db": "appTracker",
-        "host": f"mongodb+srv://{username}:{password}@cluster0.r0056lg.mongodb.net/appTracker?tls=true&tlsCAFile={certifi.where()}&retryWrites=true&w=majority",
+        "host": f"mongodb+srv://{username}:{password}@{cluster_url}/",
     }
 db = MongoEngine()
 db.init_app(app)
@@ -794,4 +778,4 @@ def get_new_application_id(user_id):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)

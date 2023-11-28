@@ -1,0 +1,23 @@
+services:
+    api:
+        build:
+            context: .
+            dockerfile: dockerfile.api
+        image: ats-api
+        ports:
+            - '5000:5000'
+        networks:
+            - ats-network
+    client:
+        build:
+            context: .
+            dockerfile: dockerfile.client
+        image: ats-client
+        ports:
+            - '3000:3000'
+        networks:
+            - ats-network
+
+networks:
+    ats-network:
+        driver: bridge
