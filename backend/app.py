@@ -178,6 +178,7 @@ def create_app():
 
     @app.route('/users/signupGoogle/authorized')
     def authorized():
+        print("Entered google auth!")
         token = oauth.google.authorize_access_token()
         user = oauth.google.parse_id_token(token, nonce=session['nonce'])
         session['user'] = user
@@ -214,7 +215,7 @@ def create_app():
             [{"token": token_whole, "expiry": expiry_str}]
         userSaved.update(authTokens=auth_tokens_new)
 
-        return redirect(f"http://localhost:3000/?token={token_whole}&expiry={expiry_str}&userId={unique_id}")
+        return redirect(f"http://127.0.0.1:3000/?token={token_whole}&expiry={expiry_str}&userId={unique_id}")
 
     @app.route("/users/signup", methods=["POST"])
     def sign_up():
@@ -298,25 +299,7 @@ def create_app():
 
             for key in data.keys():
                 user[key] = data[key]
-
-            # if data["skills"]:
-            #     user.skills = data["skills"]
-
-            # if data["job_levels"]:
-            #     user.job_levels = data["job_levels"]
-
-            # if data["locations"]:
-            #     user.locations = data["locations"]
-
-            # if data["institution"]:
-            #     user.institution = data["institution"]
-
-            # if data["phone_number"]:
-            #     user.phone_number = data["phone_number"]
-
-            # if data["address"]:
-            #     user.address = data["address"]
-
+                
             user.save()
             return jsonify(user.to_json()), 200
 
@@ -795,4 +778,4 @@ def get_new_application_id(user_id):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
