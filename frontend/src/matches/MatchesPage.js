@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Spinner from '../spinners/Spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Recommendations = () => {
 	const [recommendedJobs, setRecommendedJobs] = useState([]);
 	const [isFetchingJobs, setIsFetchingJobs] = useState(true);
 	const [fetchError, setFetchError] = useState(null);
+	const [wishList, setWishList] = useState(
+		localStorage.getItem('wishList') ? JSON.parse(localStorage.getItem('wishList')) : {}
+	);
 
 	useEffect(() => {
-		fetchRecommendations();
+		const lastJobFetchResults = localStorage.getItem('lastJobFetchResults');
+		if (lastJobFetchResults) {
+			setRecommendedJobs(JSON.parse(localStorage.getItem('lastJobFetchResults')));
+			setIsFetchingJobs(false);
+		} else {
+			fetchRecommendations();
+		}
 	}, []);
 
 	const fetchRecommendations = async () => {
@@ -25,6 +35,8 @@ const Recommendations = () => {
 			if (data && data['error']) {
 				throw new Error(data['error']);
 			} else {
+				localStorage.setItem('lastJobFetch', new Date().getTime());
+				localStorage.setItem('lastJobFetchResults', JSON.stringify(data));
 				setRecommendedJobs(data);
 			}
 		} catch (error) {
@@ -91,6 +103,16 @@ const Recommendations = () => {
 						>
 							Location
 						</th>
+
+						<th
+							className='p-3'
+							style={{
+								fontSize: 18,
+								fontWeight: '500',
+								backgroundColor: '#2a6e85',
+								color: '#fff'
+							}}
+						></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -121,6 +143,28 @@ const Recommendations = () => {
 								</a>
 								{/* <a className='p-3' href='{job.data_share_url}'>Job Link</a> */}
 								<td className='p-3'>{job.location}</td>
+								<td className='p-3'>
+									<button
+										type='button'
+										class='btn btn-dark'
+										onClick={() => {
+											wishList[index] = wishList[index] ? false : true;
+											setWishList({ ...wishList });
+											localStorage.setItem(
+												'wishList',
+												JSON.stringify(wishList)
+											);
+										}}
+									>
+										<FontAwesomeIcon
+											icon={`${
+												wishList[index] ? 'fa-solid' : 'fa-regular'
+											} fa-bookmark`}
+											size='1x'
+											cursor='pointer'
+										/>
+									</button>
+								</td>
 							</tr>
 						))}
 					{isFetchingJobs && (
