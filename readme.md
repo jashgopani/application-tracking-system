@@ -182,7 +182,8 @@ mongodb
 - **If current MongoDB Atlas owner adds your username/password to the cluster, skip to step 4** \*
 
 2. Follow MongoDB Atlas [Setup Guide](https://docs.atlas.mongodb.com/getting-started/) to create a database collection for hosting applications
-3. Create application.yml in the backend folder with the following content:
+3. Follow the instructions at [OAuth Client ID]([https://github.com/jashgopani/application-tracking-system/blob/feature/phase3-documentation-updates/LICENSE](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid)) in order to get the client id and password.
+4. Create application.yml in the backend folder with the following content:
    ```
    GOOGLE_CLIENT_ID : <Oauth Google ID>
    GOOGLE_CLIENT_SECRET : <Oauth Google Secret>
@@ -191,7 +192,7 @@ mongodb
    username : <MongoDB Atlas Username>
    password : <MongoDB Atlas Password>
    ```
-4. In app.py set 'host' string to your MongoDB Atlas connection string. Replace the username and password with {username} and {password} respectively
+5. In app.py set 'host' string to your MongoDB Atlas connection string. Replace the username and password with {username} and {password} respectively
 6. For testing through CI to function as expected, repository secrets will need to be added through the settings. Create individual secrets with the following keys/values:
 
 MONGO_USER: <MongoDB Atlas cluster username>
