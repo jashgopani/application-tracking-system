@@ -2,29 +2,30 @@
 The flask application for our program
 """
 # importing required python libraries
+import json
+from datetime import datetime, timedelta
+import hashlib
+import uuid
+import random
 from flask import Flask, jsonify, request, send_file, redirect, url_for, session
 from flask_mongoengine import MongoEngine
 from flask_cors import CORS, cross_origin
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+
 from bs4 import BeautifulSoup
-from itertools import islice
-from webdriver_manager.chrome import ChromeDriverManager
-from bson.json_util import dumps
-from io import BytesIO
+
 from fake_useragent import UserAgent
 import pandas as pd
-import json
-from datetime import datetime, timedelta
+
+
 import yaml
-import hashlib
-import uuid
-import certifi
+
+
+
 import requests
-import random
+
 from authlib.integrations.flask_client import OAuth
 from authlib.common.security import generate_token
-import os
+
 
 existing_endpoints = ["/applications", "/resume"]
 
@@ -54,7 +55,7 @@ def create_app():
     oauth = OAuth(app)
 
     @app.errorhandler(404)
-    def page_not_found(e):
+    def page_not_found():
         """
         Returns a json object to indicate error 404
 
@@ -64,7 +65,7 @@ def create_app():
 
     @app.errorhandler(405)
     # pylint: disable=C0103
-    def page_not_allowed(e):
+    def page_not_allowed():
         """
         Returns a json object to indicate error 405
 
