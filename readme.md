@@ -182,7 +182,7 @@ mongodb
 - **If current MongoDB Atlas owner adds your username/password to the cluster, skip to step 4** \*
 
 2. Follow MongoDB Atlas [Setup Guide](https://docs.atlas.mongodb.com/getting-started/) to create a database collection for hosting applications
-3. Follow the instructions at [OAuth Client ID]([https://github.com/jashgopani/application-tracking-system/blob/feature/phase3-documentation-updates/LICENSE](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid)) in order to get the client id and password.
+3. Follow the instructions at [OAuth Client ID Guide](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid) in order to get the client id and password.
 4. Create application.yml in the backend folder with the following content:
    ```
    GOOGLE_CLIENT_ID : <Oauth Google ID>
