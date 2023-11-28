@@ -300,7 +300,6 @@ def create_app():
 
             for key in data.keys():
                 user[key] = data[key]
-                
             user.save()
             return jsonify(user.to_json()), 200
 
