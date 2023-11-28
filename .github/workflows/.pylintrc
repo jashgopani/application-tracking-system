@@ -59,8 +59,8 @@ suggestion-mode=yes
 unsafe-load-any-extension=no
 
 
-; [MESSAGES CONTROL]
-[pylint.messages_control]
+[MESSAGES CONTROL]
+
 
 # Only show warnings with the listed confidence levels. Leave empty to show
 # all. Valid levels: HIGH, INFERENCE, INFERENCE_FAILURE, UNDEFINED.
@@ -168,7 +168,7 @@ unsafe-load-any-extension=no
 ;         R0915,
 ;         R0903
 
-disable=all
+; disable=all
 
 
 
